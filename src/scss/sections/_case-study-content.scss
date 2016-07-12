@@ -1,0 +1,21 @@
+section.study-content {
+	position:relative;
+	z-index:4000;
+	color:#222;
+	@media (min-width:751px) {
+		padding-bottom:50vh;
+	}
+	
+	
+	
+	@media (max-width:750px) {
+		left:0;
+		width:calc(100% + 30px);
+		margin:0 -15px;
+		padding:0 15px 40px;
+	
+	}
+	.row {
+		margin-bottom:1em;
+	}
+}

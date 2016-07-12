@@ -1,0 +1,31 @@
+section.content {
+	.row {
+		margin-bottom:2em;
+	}
+	p:last-child {
+		margin-bottom:0;
+	}
+	h4, .h4 {
+		margin:0;
+		font-size:26px;
+		line-height:35px;
+		font-weight:200; 
+		text-align:center;
+	}
+	article {
+		opacity:0;
+		display:block;
+		@include transform(translateY(40px));
+		@include transition-property(transform, opacity);
+		@include transition-delay(0.4s);
+		@include transition-duration(0.7s);
+		&.loaded {
+			opacity:1;
+			@include transform(translateY(0));
+		}
+	}
+}
+address {
+	display:inline;
+	margin:0;
+}

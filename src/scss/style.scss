@@ -1,0 +1,100 @@
+/*
+Theme name: childtheme-name-nimble
+Description: 
+Author: Rasmus Anker
+Template: viewportindustries-starkers
+*/
+
+
+
+
+/*
+Theme Name: Nimble Mobile
+Theme URI: http://wordpress.org/
+Description: The 2010 theme for WordPress is stylish, customizable, simple, and readable -- make it yours with a custom menu, header image, and background. Twenty Ten supports six widgetized areas (two in the sidebar, four in the footer) and featured images (thumbnails for gallery posts and custom header images for posts and pages). It includes stylesheets for print and the admin Visual Editor, special styles for posts in the "Asides" and "Gallery" categories, and has an optional one-column page template that removes the sidebar.
+Author: the WordPress team
+Version: 1.0
+License: GNU General Public License
+License URI: license.txt
+Tags: black, blue, white, two-columns, fixed-width, custom-header, custom-background, threaded-comments, sticky-post, translation-ready, microformats, rtl-language-support, editor-style, custom-menu
+*/
+/* =============================================================================
+   HTML5 Boilerplate CSS: h5bp.com/css
+   ========================================================================== */
+
+@import "frameworks/bourbon/bourbon";
+@import "frameworks/bootstrap";
+@import "global/typography";
+@import "sections/nav";
+@import "sections/content";
+@import "sections/home-hero";
+@import "sections/home-introduction";
+@import "sections/home-quotes";
+@import "sections/home-approach";
+@import "sections/home-clients";
+@import "sections/home-cta";
+@import "sections/case-studies";
+@import "sections/case-study-introduction";
+@import "sections/case-study-content";
+@import "sections/case-study-cta";
+@import "sections/blog";
+@import "sections/contact";
+@import "sections/optin";
+html {
+    -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape */
+}
+body {
+	background-color:#f2f2f2;
+	overflow-x:hidden;
+	font-weight:300;
+}
+
+* {
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	-webkit-text-size-adjust: none;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+}
+.index-4 {
+	z-index:4;
+	position:relative;
+}
+@media screen and (max-width:750px) {
+	.background, .unrotate, .platform {
+		@include transform(rotate(0deg) !important);
+		
+		.ctabg, .platform, .approachbg, .quotebg {
+			left:0 !important;
+			width:auto !important;
+			display:none !important;
+			height:auto;
+			&:after {
+				content:"";
+				display:none !important;
+			}
+		}
+		.logo {
+			display:none !important;
+		}
+	}
+
+	.background, .background-wrapper {
+		height: auto !important;
+		width:100% !important;
+	}
+}
+.grid {
+	display:none;
+	position:fixed;
+	top:0;
+	left:-1px;
+	width:50%;
+	height:100%;
+	border-right:1px solid #cecece;
+	z-index:200;
+	pointer-events:none;
+}

@@ -1,0 +1,132 @@
+section.approach {
+	text-align:center;
+	color:#fff;
+	position:relative;
+	top:-20px;
+
+	@media screen and (max-width:750px) {
+		background: url(img/bg-approach.jpg);
+		background-size:300px;
+		margin:0 -15px;
+		width:calc(100% + 30px);
+		padding:0 15px;
+		background-color:#000;
+		&:after {
+			@include background-image(radial-gradient(top left, rgba(0,0,0,.4) 0%,rgba(0,0,0,0) 150%));
+			top:0;
+			left:0;
+			bottom:0;
+			right:0;
+			position:absolute;
+			width:100%;
+			height:100%;
+			content:" ";
+			display:block;
+		
+		}
+	}
+
+	canvas {
+		position:absolute;
+		z-index:100;
+		left:50%;
+		width:270px; 
+		height:270px;
+		@include transform(translateX(-50%));
+		&.iteratebg {
+			z-index:99;
+		}
+		&.caniterate {
+			z-index:100;
+		}
+		@media screen and (max-width:750px) {
+			width:200px;
+			height:200px;
+		}
+		@media (min-width:751px) and (max-width:780px) {
+			margin-top:10px;
+		}
+	}
+	@media screen and (max-width:750px) {
+		.col .h4 {
+			display:none;
+		}
+	}
+	.background-wrapper {
+		pointer-events:none;
+		position:absolute;
+		left:50%;
+		width:100vw;
+		height:3600px;
+		background-image:url(img/section-bg-site-ie.svg);
+		background-size:3000px 4254px;
+		background-repeat:no-repeat;
+		background-position:center top;
+		margin-top:-890px;
+		-ms-background-position:center -890px;
+		@include transform(translateX(-50%));
+		// -ms-transform:translateX(-50%) translateY(-890px);
+		overflow:hidden;
+		z-index:4;
+		top:0;
+		& + div {
+			pointer-events:none;
+		}
+		& + div, & + div + div {
+				position:relative;
+				z-index:5;
+				padding-top:10%;
+				color:#fff;
+				text-align:left;
+			}
+			& + div + div {
+				padding-top:300px;
+				@media (max-width:750px) {
+					padding-top:230px;
+				}
+				margin-bottom:-70px;
+				@media (min-width:750px) and (max-width:800px) {
+					margin-bottom:-50px;
+				}
+			}
+			& + div + div + div {
+				height:460px;
+				overflow:hidden;
+				@media (min-width:750px) and (max-width:800px) {
+					height:440px;
+				}
+			}
+	}
+
+	img.iterate {
+		position:absolute;
+		left:50%;
+		@include transform(translateX(-50%));
+	}
+	img.trinity {
+		max-width:1258px;
+		left:50%;
+		@include transform(translateX(-50%));
+		@media (min-width:751px) {
+			width:90%;
+		}
+		margin:130px auto 0;
+		position:relative;
+		z-index:3;
+		@media (min-width:800px) and (max-width:991px) {
+			margin-top:220px;
+		}
+		@media (min-width:751px) and (max-width:799px) {
+			margin-top:250px;
+		}
+		@media (max-width:750px) {
+			width:100%;
+			margin-top:50px;
+			margin-bottom:60px;
+		}
+	}
+	div {
+		text-align:left;
+		
+	}
+}
