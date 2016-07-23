@@ -25,6 +25,7 @@ $(function() {
 		}
 		function resizeHandler() {
 			windowHeight = $(window).height();
+			$(".page-template-template-optin .learn, .page-template-template-optin .cta").css("position","relative").css("position","static");
 		}
 		function setup() {
 			$(window).bind("scroll",scrollHandler);
@@ -109,7 +110,7 @@ $(function() {
 	}());
 	function pageStart() {
 		$("img.hand, img.mockup").addClass("loaded");
-		$(".hero h2, .hero h3, .hero small, article").addClass("loaded");
+		$(".hero h2, .hero h3, .hero small, article, button").addClass("loaded");
 		$(".nav-wrapper").addClass("loaded");
 		
 		if (document.body.scrollWidth>$(window).width()) {

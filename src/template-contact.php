@@ -12,7 +12,10 @@ body {
  <script type="text/javascript">
             // When the window has finished loading create our google map below
             google.maps.event.addDomListener(window, 'load', init);
-        
+        	var lat = 51.519877;
+        	var lng = -0.142000;
+
+        	console.log(lat-51.5166972,lng+0.1424581);
             function init() {
                 // Basic options for a simple Google Map
                 // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
@@ -21,7 +24,7 @@ body {
                     zoom: 17,
                      disableDefaultUI: true,
                     // The latitude and longitude to center the map (always required)
-                    center: new google.maps.LatLng(51.5197296,-0.0824777), 
+                    center: new google.maps.LatLng(lat - 0.0031797999999980675,lng-0.0004581000000000168), 
 
                     // How you would like to style the map. 
                     // This is where you would paste any style found on Snazzy Maps.
@@ -38,7 +41,7 @@ body {
 
                 // Let's also add a marker while we're at it
                 var marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(51.523151,-0.081952),
+                    position: new google.maps.LatLng(51.519877, -0.142000),
                     map: map,
                     title: 'Snazzy!'
                 });

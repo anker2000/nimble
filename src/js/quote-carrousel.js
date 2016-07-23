@@ -46,7 +46,7 @@ $(function() {
 	        }
 	    }
 	}());
-	$("section.quotes").each(function() {
+	$(".home section.quotes").each(function() {
 	 	quoteHandler.Init();
 	});
 });

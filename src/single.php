@@ -8,7 +8,7 @@
 		<header class="hero">
 			<div class="row">
 				<div class="col-md-offset-1 col-md-6">
-					<small>By <address class="author">Tim Bichara</address>, CEO – <time pubdate datetime="<?php the_date('Y-m-d H:i'); ?>"><?php echo get_the_date(); ?></time></small>
+					<small>By <address class="author">Tim Bichara</address> – <time pubdate datetime="<?php the_date('Y-m-d H:i'); ?>"><?php echo get_the_date(); ?></time></small>
 					<h2><?php the_title(); ?></h2>
 				</div>
 			</div>
@@ -57,7 +57,8 @@
 									<?php
 									$image = get_sub_field('image-full_bleed');
 									?>
-									<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>"  width="100%">
+									<figure><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>"  width="100%">
+									<figcaption><?php echo $image['caption']; ?></figcaption></figure>
 								</div>
 							</div>
 							<?php
@@ -72,12 +73,32 @@
 				endif;
 
 				?>			
+				<div class="row">
+					<div class="col-md-offset-3 col-md-6 ">
+						<small>Share:</small> <?php echo do_shortcode("[ssba]"); ?>
+						<?php related_posts(); ?>
+						<div class="cta-blog"><?php 
+						$the_query = new WP_Query( array( 'p' => '178', 'post_type' => 'snippet' ) );
+												
+						// the Loop
+						if ( $the_query->have_posts() ) {
 
+							while ( $the_query->have_posts() ) {
+								$the_query->the_post();
+								echo('<h4 style="font-size:20px; text-align:left; font-weight:bold; margin-bottom:15px; line-height:1.5">'.get_the_title().'</h4>');
+								the_content();
+							}
+						} 
+						related_posts();
+						wp_reset_postdata();
+						?></div>
+					</div>
+				</div>
 			</article>
 		
 
 		</section>
-		<section class="cta2">
+		<!-- <section class="cta2">
 			<div class="background-wrapper">
 				<div class="background">
 					<div class="unrotate">
@@ -100,11 +121,12 @@
 								the_content();
 							}
 						} 
+						related_posts();
 						wp_reset_postdata();
 						?>
 				</div>
 			</div>
-		</section>
+		</section> -->
 	<?php endwhile; ?>
 	</div>
 <?php else: ?><?php endif; ?>
